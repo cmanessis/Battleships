@@ -1,21 +1,14 @@
 require 'sinatra/base'
 require 'battleships'
 
-
 class BattleshipsWeb < Sinatra::Base
-
-
-
-  set :views, Proc.new { File.join(root, '..', 'views') }
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
-    'Hello Battleships!'
     erb :index
   end
 
   get '/new_game' do
-    @error_msg = ""
-    @msg_color = "green"
     erb :new_game
   end
 
@@ -28,8 +21,8 @@ class BattleshipsWeb < Sinatra::Base
       redirect '/board_setup'
 
     else
-      @msg_color = "red"
-      @error_msg = "error43:No name has been entered."
+      @msg_color = 'red'
+      @error_msg = 'error!!:No name has been entered.'
       erb :new_game
     end
   end
@@ -39,7 +32,7 @@ class BattleshipsWeb < Sinatra::Base
     erb :board_setup
   end
 
-  set :views, Proc.new { File.join(root, '..', 'views') }
+  set :views, proc { File.join(root, '..', 'views') }
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

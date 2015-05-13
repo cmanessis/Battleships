@@ -5,7 +5,7 @@ Feature: Sarting Battleships
 
   Scenario: Registering
     Given I am on the homepage
-    When I follow "New Game"
+    When I follow "Start Game"
     Then I should see "Enter player 1 name"
     And I should see "Enter player 2 name "
 
