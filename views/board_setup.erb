@@ -7,7 +7,45 @@
 </head>
 
 <body>
-  <pre> <%= @board1 %> </pre>
+  <h4 style="text-decoration:underline;">Ship Categories</h4>
+
+  <pre><%= $game1.own_board_view $game1.player_1 %></pre>
+
+  <form action="board_setup" method='post'>
+    Please choose ship type:
+    <input type="text" name="ship"><br/>
+    <label>Please enter coordinates:
+    <input type="text" name="coordinate"></label>
+    <label>Please enter direction:</label>
+    <input type="text" name="direction">
+    <input type="submit" value="submit">
+  </form><br/>
+
+  <a style="padding:3px; border:1px solid black; border-radius:35%; background-color:#e6e6e6; margin-top:1em;" href="start_game">Let's Play</a>
+
+  <table style="width:20%; border:3px solid #f8f8f8; padding:2em; border-radius:30px;">
+    <tr>
+      <td>Submarine:</td><td>1</td>
+    </tr>
+    <tr>
+      <td>Destroyer:</td><td>2</td>
+    </tr>
+    <tr>
+      <td>Cruiser:</td><td>3</td>
+    </tr>
+    <tr>
+      <td>Battleship</td><td>4</td>
+    </tr>
+    <tr>
+      <td>Aircraft carrier</td><td>5</td>
+    </tr>
+  </table>
+
+
+
+
+
+
 </body>
 
 </html>
